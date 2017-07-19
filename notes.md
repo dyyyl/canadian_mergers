@@ -22,3 +22,9 @@ __Mergers concluded June 2017__
 | Acklands-Grainger Inc. / WFS Enterprises Ltd. | 4189 | NAL |
 | AECOM Technology Corporation / URS Corporation | 5413 | NAL |
 
+
+What is expected output?
+------
+1. Parties to transaction
+2. North American Industry Classification System
+3. Result code (ARC, NAL, CA, or JD)
