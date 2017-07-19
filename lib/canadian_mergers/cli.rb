@@ -16,17 +16,8 @@ class CanadianMergers::CLI
   end
 
   def list_mergers
-    puts "Merger reviews concluded for the period of #{@month}, #{@year}:"
-    puts <<-DOC
-
-    |           Parties to the Transaction           | Industry |  Result |
-    | --------------------------------------------------------------------|
-    | Acklands-Grainger Inc. / WFS Enterprises Ltd.  |   4189   |   NAL   |
-    | --------------------------------------------------------------------|
-    | AECOM Technology Corporation / URS Corporation |   5413   |   NAL   |
-    | --------------------------------------------------------------------|
-
-    DOC
+    puts "Merger reviews concluded for the period of #{@month.capitalize}, #{@year}:"
+    @merger_list = CanadianMergers::Mergers.all
   end
 
   def goodbye
