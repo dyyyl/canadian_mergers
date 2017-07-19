@@ -1,7 +1,8 @@
 # Instantiate mergers from list
 class CanadianMergers::Mergers
 
-  def self.all
+  def self.table
+    # Fills table with merger objects
     puts <<-DOC
 
     |           Parties to the Transaction           | Industry |  Result |
