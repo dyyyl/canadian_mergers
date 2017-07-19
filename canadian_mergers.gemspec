@@ -1,17 +1,21 @@
 # coding: utf-8
-lib = File.expand_path("../lib", __FILE__)
+lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "canadian_mergers/version"
+require 'canadian_mergers/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "canadian_mergers"
+  spec.name          = 'canadian_mergers'
   spec.version       = CanadianMergers::VERSION
-  spec.authors       = ["Dylan Bromell"]
-  spec.email         = ["dmbromell@gmail.com"]
+  spec.authors       = ['Dylan Bromell']
+  spec.email         = ['dmbromell@gmail.com']
 
-  spec.summary       = %q{A CLI tool for scraping monthly data on concluded mergers in Canada}
-  spec.homepage      = "https://github.com/cptbrkfst/canadian_mergers"
-  spec.license       = "MIT"
+  spec.summary       = 'A CLI tool for scraping monthly data on concluded mergers in Canada'
+  spec.homepage      = 'https://github.com/cptbrkfst/canadian_mergers'
+  spec.license       = 'MIT'
+
+  # Dependencies
+  spec.add_runtime_dependency 'terminal-table', ['= 1.8']
+  spec.add_development_dependency 'pry', ['>= 0']
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
