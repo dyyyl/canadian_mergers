@@ -17,7 +17,7 @@ class CanadianMergers::CLI
 
   def list_mergers
     puts "Merger reviews concluded for the period of #{@month.capitalize}, #{@year}:"
-    @merger_list = CanadianMergers::Mergers.table
+    @merger_list = CanadianMergers::MergerList.table
   end
 
   def goodbye

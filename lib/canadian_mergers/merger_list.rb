@@ -1,5 +1,5 @@
 # Instantiate mergers from list
-class CanadianMergers::Mergers
+class CanadianMergers::MergerList
 
   def self.table
     # Fills table with merger objects
