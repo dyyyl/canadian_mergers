@@ -4,17 +4,18 @@ class CanadianMergers::CLI
 
   def call
     menu
-    list_mergers(:year, :month)
+    list_mergers
+    goodbye
   end
 
   def menu
     puts 'Please enter the year you would like to access: '
     @year = gets.strip
     puts 'Please enter the month you would like to access:'
-    @month = gets.strip
+    @month = gets.strip.downcase
   end
 
-  def list_mergers(year, month)
+  def list_mergers
     puts "Merger reviews concluded for the period of #{@month}, #{@year}:"
     puts <<-DOC
 
@@ -26,6 +27,17 @@ class CanadianMergers::CLI
     | --------------------------------------------------------------------|
 
     DOC
+  end
+
+  def goodbye
+    puts 'Would you like to convert this table to CSV? (Y/n)'
+    input = gets.strip
+    to_csv if /y/i =~ input
+  end
+
+  def to_csv
+    # converts table to csv
+    puts "CSV created as #{@month}-#{@year}.csv"
   end
 
 end
