@@ -13,11 +13,6 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/cptbrkfst/canadian_mergers'
   spec.license       = 'MIT'
 
-  # Dependencies
-  spec.add_runtime_dependency 'terminal-table', ['= 1.8']
-  spec.add_runtime_dependency 'nokogiri', ['~> 1.6', '>= 1.6.8']
-  spec.add_development_dependency 'pry', ['>= 0']
-
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
@@ -34,7 +29,11 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.15"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
+  # Dependencies
+  spec.add_runtime_dependency     'terminal-table', '= 1.8'
+  spec.add_runtime_dependency     'nokogiri', '~> 1.6', '>= 1.6.8'
+  spec.add_development_dependency 'bundler', '~> 1.15'
+  spec.add_development_dependency 'pry', '>= 0'
+  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'rspec', '~> 3.0'
 end
