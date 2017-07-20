@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
-require './lib/canadian_mergers'
+require "bundler/setup"
+require "canadian_mergers"
 
 CanadianMergers::CLI.new.call
