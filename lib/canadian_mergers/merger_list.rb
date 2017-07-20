@@ -1,7 +1,7 @@
 # Instantiate list from merger objects
 class CanadianMergers::MergerList
 
-  def self.table
+  def self.table(year, month)
     # Mocks table of merger objects
     # Constructs table from array of merger objects using terminal-table
     headings = ['Parties to Transaction', 'Industry', 'Result']
