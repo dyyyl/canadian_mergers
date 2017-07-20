@@ -15,6 +15,7 @@ Gem::Specification.new do |spec|
 
   # Dependencies
   spec.add_runtime_dependency 'terminal-table', ['= 1.8']
+  spec.add_runtime_dependency 'nokogiri', ['~> 1.6', '>= 1.6.8']
   spec.add_development_dependency 'pry', ['>= 0']
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
