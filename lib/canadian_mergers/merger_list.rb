@@ -13,4 +13,9 @@ class CanadianMergers::MergerList
     puts table
   end
 
+  def self.to_csv
+    # converts table to csv
+    puts "CSV created!"
+  end
+
 end
