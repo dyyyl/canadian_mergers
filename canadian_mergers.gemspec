@@ -32,6 +32,7 @@ Gem::Specification.new do |spec|
   # Dependencies
   spec.add_runtime_dependency     'terminal-table', '= 1.8'
   spec.add_runtime_dependency     'nokogiri', '~> 1.6', '>= 1.6.8'
+  spec.add_development_dependency 'awesome_print', '~> 1.7'
   spec.add_development_dependency 'bundler', '~> 1.15'
   spec.add_development_dependency 'pry', '>= 0'
   spec.add_development_dependency 'rake', '~> 10.0'
