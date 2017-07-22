@@ -2,12 +2,14 @@
 class CanadianMergers::MergerList
 
   def self.table(year, month)
-    # Mocks table of merger objects
     # Constructs table from array of merger objects using terminal-table
+    CanadianMergers::Scrape.new(year, month).table_data
     headings = ['Parties to Transaction', 'Industry', 'Result']
+
     table = Terminal::Table.new headings: headings do |t|
-      t.add_row ['Acklands-Grainger Inc. / WFS Enterprises Ltd.', 4189, 'NAL']
-      t.add_row ['AECOM Technology Corporation / URS Corporation', 5413, 'NAL']
+      CanadianMergers::Merger.all.each do |merger|
+        t.add_row [merger.parties.to_s, merger.industry.to_i, merger.result.to_s]
+      end
       t.style = { all_separators: true, alignment: :center }
     end
     puts table
@@ -15,7 +17,7 @@ class CanadianMergers::MergerList
 
   def self.to_csv
     # converts table to csv
-    puts "CSV created!"
+    puts 'CSV created!'
   end
 
 end

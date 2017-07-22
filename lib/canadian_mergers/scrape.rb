@@ -8,13 +8,15 @@ class CanadianMergers::Scrape
   end
 
   def get_page
-    Nokogiri::HTML(open("http://www.competitionbureau.gc.ca/eic/site/cb-bc.nsf/eng/02435.html#details-panel#{@year}-#{@month}"))
+    Nokogiri::HTML(open('http://www.competitionbureau.gc.ca/eic/site/cb-bc.nsf/eng/02435.html'))
   end
 
   def table_data
-    get_page.css('tbody tr').each do |tag|
-      data = tag.css('td').collect(&:text)
-      CanadianMergers::Merger.create(data[0], data[1], data[2])
+    get_page.css("details#details-panel#{@year}-#{@month}").each do |table|
+      table.css('tbody tr').each do |tag|
+        data = tag.css('td').collect(&:text)
+        CanadianMergers::Merger.create(data[0], data[1], data[2])
+      end
     end
   end
 end
