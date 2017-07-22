@@ -8,16 +8,26 @@ class CanadianMergers::MergerList
 
     table = Terminal::Table.new headings: headings do |t|
       CanadianMergers::Merger.all.each do |merger|
-        t.add_row [merger.parties, merger.industry, merger.result]
+        parties = format_merger(merger.parties)
+        t.add_row [parties, merger.industry, merger.result]
       end
       t.style = { all_separators: true, alignment: :center }
     end
     puts table
   end
 
-  def self.to_csv
-    # converts table to csv
+  def self.to_csv(year, month)
+    CSV.open("#{month}_#{year}_mergers.csv", 'w') do |csv|
+      CanadianMergers::Merger.all.each do |merger|
+        csv << [merger.parties, merger.industry, merger.result]
+      end
+    end
     puts 'CSV created!'
+  end
+
+  def self.format_merger(merger)
+    merger.gsub('/', "/\n")
+    merger.gsub(',', ",\n")
   end
 
 end
