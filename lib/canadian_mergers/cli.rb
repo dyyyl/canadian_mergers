@@ -23,7 +23,7 @@ class CanadianMergers::CLI
   def goodbye
     puts 'Would you like to convert this table to CSV? (Y/n)'
     input = gets.strip
-    CanadianMergers::MergerList.to_csv if /y/i =~ input
+    CanadianMergers::MergerList.to_csv(@year, @month) if /y/i =~ input
   end
 
 end
