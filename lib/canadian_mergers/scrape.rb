@@ -15,6 +15,8 @@ class CanadianMergers::Scrape
     get_page.css("details#details-panel#{@year}-#{@month}").each do |table|
       table.css('tbody tr').each do |tag|
         data = tag.css('td').collect(&:text)
+        data[0].gsub!('/', "/\n")
+        data[0].gsub!(',', ",\n")
         CanadianMergers::Merger.create(data[0], data[1], data[2])
       end
     end

@@ -8,7 +8,7 @@ class CanadianMergers::MergerList
 
     table = Terminal::Table.new headings: headings do |t|
       CanadianMergers::Merger.all.each do |merger|
-        t.add_row [merger.parties.to_s, merger.industry.to_i, merger.result.to_s]
+        t.add_row [merger.parties, merger.industry, merger.result]
       end
       t.style = { all_separators: true, alignment: :center }
     end
