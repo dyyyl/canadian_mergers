@@ -13,8 +13,10 @@ class CanadianMergers::CLI
       puts 'Please enter the year you would like to access:'
       @year = gets.strip
     end
-    puts 'Please enter the month you would like to access (January - December)'
-    @month = gets.strip.downcase
+    until Date::MONTHNAMES.include?(@month.to_s.capitalize)
+      puts 'Please enter the month you would like to access (January - December)'
+      @month = gets.strip.downcase
+    end
   end
 
   def list_mergers
