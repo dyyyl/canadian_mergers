@@ -9,9 +9,11 @@ class CanadianMergers::CLI
   end
 
   def menu
-    puts 'Please enter the year you would like to access: '
-    @year = gets.strip
-    puts 'Please enter the month you would like to access:'
+    until @year.to_i.between?(2012, Date.today.year)
+      puts 'Please enter the year you would like to access:'
+      @year = gets.strip
+    end
+    puts 'Please enter the month you would like to access (January - December)'
     @month = gets.strip.downcase
   end
 
@@ -25,5 +27,4 @@ class CanadianMergers::CLI
     input = gets.strip
     CanadianMergers::MergerList.to_csv(@year, @month) if /y/i =~ input
   end
-
 end
