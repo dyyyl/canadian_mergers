@@ -1,5 +1,6 @@
 # CanadianMergers
 [![Code Climate](https://img.shields.io/codeclimate/github/kabisaict/flow.svg)](https://codeclimate.com/github/cptbrkfst/canadian_mergers)
+[![Gem Version](https://badge.fury.io/rb/canadian_mergers.svg)](https://badge.fury.io/rb/canadian_mergers)
 
 Canadian Mergers is a CLI tool that allows users to access monthly reports on concluded mergers in Canada.
 
