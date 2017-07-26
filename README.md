@@ -1,6 +1,6 @@
 # CanadianMergers
 
-TODO: Write gem description
+Canadian Mergers is a CLI tool that allows users to access monthly reports on concluded mergers in Canada.
 
 ## Installation
 
@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run: `canadian_mergers` after installing the gem.
 
 ## Development
 
