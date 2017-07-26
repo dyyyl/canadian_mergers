@@ -26,8 +26,6 @@ class CanadianMergers::MergerList
   end
 
   def self.format_merger(merger)
-    merger.gsub('/', "/\n")
     merger.gsub(',', ",\n")
   end
-
 end
